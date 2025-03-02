@@ -25,8 +25,8 @@ async def getid(client, message):
     message_id = message.id
     reply = message.reply_to_message
 
-    text = f"**[ᴍᴇssᴀɢᴇ ɪᴅ:]({message.link})** `{message_id}`\n"
-    text += f"**[ʏᴏᴜʀ ɪᴅ:](tg://user?id={your_id})** `{your_id}`\n"
+    text = f"**[❖ᴍᴇssᴀɢᴇ ɪᴅ:]({message.link})** `{message_id}`\n"
+    text += f"**[❖ʏᴏᴜʀ ɪᴅ:](tg://user?id={your_id})** `{your_id}`\n"
 
     if not message.command:
         message.command = message.text.split()
@@ -38,7 +38,7 @@ async def getid(client, message):
         try:
             split = message.text.split(None, 1)[1].strip()
             user_id = (await client.get_users(split)).id
-            text += f"**[ᴜsᴇʀ ɪᴅ:](tg://user?id={user_id})** `{user_id}`\n"
+            text += f"**[❖ᴜsᴇʀ ɪᴅ:](tg://user?id={user_id})** `{user_id}`\n"
 
         except Exception:
             return await message.reply_text("ᴛʜɪs ᴜsᴇʀ ᴅᴏᴇsɴ'ᴛ ᴇxɪsᴛ.", quote=True)
